@@ -23,9 +23,6 @@ public class AnnotationService {
     private static final Logger log = LoggerFactory.getLogger(AnnotationService.class);
     private TabixReader reader;
 
-    /**
-     * Инициализируем TabixReader один раз при старте приложения.
-     */
     @PostConstruct
     private void init() throws IOException {
         log.info("Инициализация TabixReader: {}", annotationFilePath);
@@ -48,9 +45,6 @@ public class AnnotationService {
     }
 
 
-    /**
-     * Поиск аннотации по координатам и аллелю (быстро через индекс tabix).
-     */
     public AnnotationRecord findVariant(String rac, int lap, int rap, String refkey) throws IOException {
         log.info("Запрос поиска варианта: rac={}, lap={}, rap={}, refkey={}", rac, lap, rap, refkey);
 
@@ -80,10 +74,6 @@ public class AnnotationService {
         return null;
     }
 
-
-    /**
-     * Debug-метод: возвращает все строки из файла .gz, игнорируя tabix-индекс.
-     */
     public List<AnnotationRecord> findAllVariants() throws IOException {
         log.info("==> findAllVariants вызван");
 
