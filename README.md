@@ -22,5 +22,23 @@
 3. Укажите путь к архиву в `src/main/resources/application.properties`:
 ```properties
 annotation.file.path=C:/Users/user/Desktop/clinvar/clinvar_test.tsv.gz
-
+```
 http://localhost:8080/info?rac=NC_000001.11&lap=925951&rap=925953&refkey=A - Локальный хост
+
+## Сборка и запуск с помощью Docker
+Для удобного запуска сервис можно собрать и запустить через Docker:
+1. Сборка проекта
+```
+mvn clean package
+```
+2. Запуск контейнера (Docker Compose)
+```
+docker-compose up --build
+```
+3. Доступ к сервису
+http://localhost:8080/info?rac=NC_000001.11&lap=925951&rap=925953&refkey=A
+Структура:
+Dockerfile — инструкция по сборке контейнера
+docker-compose.yml — запуск с пробросом порта и монтированием архива
+
+файл clinvar_test.tsv.gz находится в корне проекта

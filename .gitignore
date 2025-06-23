@@ -43,3 +43,5 @@ Thumbs.db
 
 # ===== HTTP Client requests =====
 *.http
+clinvar_test.tsv.gz
+clinvar_test.tsv.gz.tbi

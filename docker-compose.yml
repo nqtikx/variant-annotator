@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  variant-annotator:
+    build: .
+    container_name: variant-annotator
+    ports:
+      - "8080:8080"
+    environment:
+      - annotation.file.path=/app/clinvar_test.tsv.gz
+    volumes:
+      - ./:/app

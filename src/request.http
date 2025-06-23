@@ -11,7 +11,7 @@ GET http://localhost:8080/info?rac=NC_000001.11&lap=925951&rap=925953
 GET http://localhost:8080/info?rac=&lap=-1&rap=xxx&refkey=null
 
 ### все аннотации
-GET
+GET http://localhost:8080/info/debug/all
 
 ### ошибка чтения файла (файл переименовать надо)
 GET http://localhost:8080/info/debug/all
